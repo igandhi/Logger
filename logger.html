@@ -1,0 +1,33 @@
+<head>
+  <title>Logger</title>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>Logger</h1>
+		</header>
+
+		{{> loginButtons}}
+
+		{{#if currentUser}}
+			<form class="new-topic">
+				<input type="text" class="form-control" name="text" placeholder="Add new topic" />
+			</form>
+		{{/if}}
+		<ul>
+			{{#each topics}}
+				{{> topic}}
+			{{/each}}
+		</ul>
+	</div>
+</body>
+
+<template name="topic">
+<li>
+	<span class="text">{{text}}</span>
+	<button class="btn btn-danger reduce">-</button>
+	<span class="time">{{timeSpent}}</span>
+	<button class="btn btn-primary increase">+</button>
+</li>
+</template>
